@@ -1,6 +1,10 @@
 # TestAcePrimeng
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+* V0.0.1 initial angular.
+* V0.0.2 primeng 12.1.0-rc.1, primicons 4.1.0 and styles as in the get-started.
+
+
 
 ## Development server
 
