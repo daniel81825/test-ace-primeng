@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "ace-builds": "^1.4.12",
     "primeicons": "^4.1.0",
     "primeng": "^12.1.0-rc.1",
     "rxjs": "~6.6.0",

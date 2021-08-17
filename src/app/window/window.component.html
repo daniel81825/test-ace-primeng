@@ -1,0 +1,16 @@
+<p-dialog #dialog
+    [header]="_config.wtitle" 
+    [(visible)]="_config.visible"
+    [closeOnEscape]="false"
+    [closable]="!_config.dontCancel"
+    [baseZIndex]="_config.zIndex"
+    (onShow)="doWindowAction($event,'show')"
+    (onHide)="doWindowAction($event,'hide')"
+    (onResizeInit)="doWindowAction($event,'resize_init')"
+    (onResizeEnd)="doWindowAction($event,'resize_end')"
+    (onDragEnd)="doWindowAction($event,'drag_end')"
+    (onMaximize)="doWindowAction($event,'maximize')"
+    >
+    <!--{{_config.component}}-->
+    <app-editor [text]="text" [resize]="resizeStr"></app-editor>
+</p-dialog>
