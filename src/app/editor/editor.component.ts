@@ -8,9 +8,6 @@ import * as ace from "ace-builds";
   styleUrls: ['./editor.component.css']
 })
 export class EditorComponent implements AfterViewInit  {
-  // https://ace.c9.io/#nav=about
-  // https://www.npmjs.com/package/ngx-ace-editor-wrapper (failed)
-  // 
 
   @Input() set text(otext:string) {
     this._text = otext;
@@ -68,8 +65,8 @@ export class EditorComponent implements AfterViewInit  {
     if (this.cwidth > 0 && this.cheight > 0)
     {
       return {
-        "min-width":"500px",
-        "min-height":"300px",
+        "min-width":"200px",
+        "min-height":"200px",
         "width": this.cwidth+'px',
         "height":this.cheight+'px',
         "overflow":"auto"
@@ -78,8 +75,8 @@ export class EditorComponent implements AfterViewInit  {
     else
     {
       return {
-        "min-width":"500px",
-        "min-height":"300px",
+        "min-width":"100px",
+        "min-height":"100px",
         "width": '100%',
         "height":'85%',
         "overflow":"auto"
@@ -104,7 +101,7 @@ export class EditorComponent implements AfterViewInit  {
     } else {
       return;
     }
-    // this.aceEditor.setAutoScrollEditorIntoView(true);
+    this.aceEditor.setAutoScrollEditorIntoView(true);
     this.aceEditor.setTheme('ace/theme/twilight');
     this.aceSession = new ace.EditSession(this._text);
     this.aceSession.setMode('ace/mode/text');
