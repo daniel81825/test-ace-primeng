@@ -88,10 +88,12 @@ export class EditorComponent implements AfterViewInit  {
     }
   }  
   private updateMyStyle(twidth:number,theight:number) {
-    this.cwidth = twidth;
-    this.cheight = theight;
-    if (typeof this.aceEditor !== 'undefined')
+    // this.cwidth = twidth;
+    // this.cheight = theight;
+    if (typeof this.aceEditor !== 'undefined') {
       this.aceEditor.resize(true);
+      this.aceEditor.renderer.updateFull()
+    }
   }
 
   ngAfterViewInit(): void {
@@ -102,6 +104,7 @@ export class EditorComponent implements AfterViewInit  {
     } else {
       return;
     }
+    // this.aceEditor.setAutoScrollEditorIntoView(true);
     this.aceEditor.setTheme('ace/theme/twilight');
     this.aceSession = new ace.EditSession(this._text);
     this.aceSession.setMode('ace/mode/text');

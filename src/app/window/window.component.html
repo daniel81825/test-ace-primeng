@@ -10,6 +10,8 @@
     (onResizeEnd)="doWindowAction($event,'resize_end')"
     (onDragEnd)="doWindowAction($event,'drag_end')"
     (onMaximize)="doWindowAction($event,'maximize')"
+    [minX]="100" [minY]="100"
+    appendTo="body"
     >
     <!--{{_config.component}}-->
     <app-editor [text]="text" [resize]="resizeStr"></app-editor>

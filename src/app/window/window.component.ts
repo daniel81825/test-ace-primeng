@@ -26,9 +26,9 @@ export class WindowComponent implements OnInit {
   constructor() { }
 
   doWindowAction(event:any,actionType:string){
+    console.log(actionType,event);
     switch(actionType){
       case 'resize_end':
-        console.log("resize_end",event);
         this.resizeStr = "resize:"+event.pageX+":"+event.pageY;
         return;
       case 'show':
