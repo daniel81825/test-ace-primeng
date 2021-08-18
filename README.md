@@ -15,6 +15,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * it takes a short delay between sizing bigger and take over from the ace editor
 * bigger seems to work, smaller there is an issue with a scrollbar of the p-dialog
 
+## Software Structure:
+* src/app/app.component.html/.ts: 
+* * windowsconfigurations for handling multiple diaalogs
+* * button in the top left, don't know, why it is so small.
+* src/app/window/window.component.ts/.html:
+* * definition of one p-dialog with 
+* * dynamic configuration, handle events and the embedding of the editor component
+* src/app/editor/editor.component.html/.ts:
+* * app-ace-editor, some buttons and confimation services
+* * logic to initialize and resizing for the dialog.
 
 ## Development server
 
