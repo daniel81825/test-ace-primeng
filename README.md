@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * V0.0.2 primeng 12.1.0-rc.1, primicons 4.1.0 and styles as in the get-started.
 * V0.0.3 ace-builds@1.4.12 plus an test implementation (unfortunatly only partially working)
 * Some experiments with ace and css settings, great in bigger, problem in smaller
+* V0.0.4 issue with themelist
 
 ## Testing the issues with resizable primeng-ace-editors
 * ng serve => http://localhost:4200/
@@ -12,8 +13,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * insert with return multiple lines to exceed current windo size
 * resize the dialog and look what is happening
 ### Current issues
-* it takes a short delay between sizing bigger and take over from the ace editor
-* bigger seems to work, smaller there is an issue with a scrollbar of the p-dialog
+* ace.require themelist not working!, see debug-console.
 
 ## Software Structure:
 * src/app/app.component.html/.ts: 

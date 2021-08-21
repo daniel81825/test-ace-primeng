@@ -28,6 +28,8 @@ export class EditorComponent implements AfterViewInit  {
   @ViewChild("editor") private editor: ElementRef<HTMLElement>|undefined;
   private aceEditor:ace.Ace.Editor|undefined;
   private aceSession:ace.Ace.EditSession|undefined;
+  public themes:any[]=[];
+  public currentTheme:string="";
 
   public _text:string = "";
   private fileinfo:any;
@@ -59,6 +61,12 @@ export class EditorComponent implements AfterViewInit  {
           //reject action
       }    
     })
+}
+
+public changeTheme() {
+  if (typeof this.aceEditor !== 'undefined') {
+    this.aceEditor.setTheme('ace/theme/'+this.currentTheme);
+  }
 }
 
   myStyle(): object {
@@ -106,5 +114,12 @@ export class EditorComponent implements AfterViewInit  {
     this.aceSession = new ace.EditSession(this._text);
     this.aceSession.setMode('ace/mode/text');
     this.aceEditor.setSession(this.aceSession);
+    var themelist = ace.require("ace/ext/themelist"); // delivers undefined!!!
+    console.log("themelist",themelist);
+    this.themes = [];
+    var themeOb :any = themelist.themesByName // error reference undefined
+    themeOb.keys().forEach((themeName: any) => {
+      this.themes.push({name:themeName,code:themeName});
+    })
   }
 }

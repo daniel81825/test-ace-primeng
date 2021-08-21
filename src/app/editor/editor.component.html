@@ -1,7 +1,8 @@
 <p-confirmPopup></p-confirmPopup>
 <p-toolbar>
-    <div class="p-toolbar-group-right">
+    <div class="p-toolbar-group-left">
         <p-toast position="top-left"></p-toast>
+        <p-dropdown [options]="themes" [(ngModel)]="currentTheme" (onChange)="changeTheme()" [virtualScroll]="true" [itemSize]="10" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Wähle 'Theme'"></p-dropdown>
     </div> 
     <div class="p-toolbar-group-right">
         <p-button label="Speichern" icon="pi pi-upload" (click)="onSave($event)"styleClass="p-button-success"></p-button>
